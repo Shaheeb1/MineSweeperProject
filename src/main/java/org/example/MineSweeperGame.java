@@ -9,6 +9,8 @@ public class MineSweeperGame {
     public boolean[][] board;
     public boolean[][] revealed;
 
+    private Random rand = new Random();
+
     public MineSweeperGame() {
         board = new boolean[ROWS][COLS];
         revealed = new boolean[ROWS][COLS];
@@ -16,7 +18,7 @@ public class MineSweeperGame {
     }
 
     public void initializeBoard() {
-        Random rand = new Random();
+
         int minesPlaced = 0;
         //will randomly place mines into board
         while (minesPlaced < MINES) {
