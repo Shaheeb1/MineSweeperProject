@@ -56,18 +56,7 @@ public class MineSweeperGame {
     }
 
     public int getAdjacentMines(int row, int col) {
-        //keep track of adjacent cells contain mines
-        int count = 0;
-        for (int i = row - 1; i <= row + 1; i++) {
-            for (int j = col - 1; j <= col + 1; j++) {
-                //checking if cell is valid on gameboard, checks for mine
-                //if mine -advacent minecount++
-                if (i >= 0 && i < ROWS && j >= 0 && j < COLS && board[i][j]) {
-                    count++;
-                }
-            }
-        }
-        return count;
+
     }
 
     public void play() {
