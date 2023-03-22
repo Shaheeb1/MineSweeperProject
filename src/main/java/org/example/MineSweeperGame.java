@@ -2,11 +2,11 @@ package org.example;
 import java.util.*;
 
 public class MineSweeperGame {
-    private static final int ROWS = 8;
-    private static final int COLS = 8;
+    private static final int ROWS = 10;
+    private static final int COLS = 10;
     private static final int MINES = 10;
 
-    private boolean[][] board;
+    public boolean[][] board;
     public boolean[][] revealed;
 
     public MineSweeperGame() {
@@ -96,8 +96,6 @@ public class MineSweeperGame {
         }
         scanner.close();
     }
-
-
 
     public static void main(String[] args) {
         MineSweeperGame game = new MineSweeperGame();
