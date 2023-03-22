@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MineSweeperTest {
-  /*  @Test
+    @Test
     public void test_play() {
         MineSweeperGame game = new MineSweeperGame();
         game.revealed[0][0] = true;
