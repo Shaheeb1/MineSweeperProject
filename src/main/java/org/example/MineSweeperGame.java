@@ -2,9 +2,9 @@ package org.example;
 import java.util.*;
 
 public class MineSweeperGame {
-    private static final int ROWS = 10;
-    private static final int COLS = 10;
-    private static final int MINES = 10;
+    private static final int ROWS = 8;
+    private static final int COLS = 8;
+    private static final int MINES = 8;
 
     public boolean[][] board;
     public boolean[][] revealed;
@@ -20,7 +20,7 @@ public class MineSweeperGame {
     public void initializeBoard() {
 
         int minesPlaced = 0;
-        //will randomly place mines into board
+
         while (minesPlaced < MINES) {
             //generate 2 random numbers between 0 number columns and row place mine
 
@@ -35,7 +35,9 @@ public class MineSweeperGame {
     }
 
     public void printBoard() {
-        //iterate over each cell of board
+
+        System.out.println("0 1 2 3 4 5 6 7");
+        System.out.println("---------------");
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
                 //method checks cell is revealed (true) - if cell revealed
@@ -57,6 +59,18 @@ public class MineSweeperGame {
 
     public int getAdjacentMines(int row, int col) {
 
+        int mineCount = 0;
+        for (int i = row ;  i <= row + 1; i++) {
+            for (int j = col ; j <= col + 1; j++) {
+                //checking if cell is valid on gameboard, checks for mine
+                //check each cell laft to right and up and down and if
+                //mine present then increase counter
+                if (i >= 0 && i < ROWS && j >= 0 && j < COLS && board[i][j]) {
+                    mineCount++;
+                }
+            }
+        }
+        return mineCount;
     }
 
     public void play() {
@@ -65,10 +79,10 @@ public class MineSweeperGame {
             printBoard();
             //prompts user to enter row and column select cell
             System.out.print("Enter row (0-7)" + " and column (0-7):");
-            //take user row and col
+
             int row = scanner.nextInt();
             int col = scanner.nextInt();
-            //checks user numbers within range
+
             if (row < 0 || row >= ROWS || col < 0 || col >= COLS) {
                 System.out.println("Invalid input.");
 
